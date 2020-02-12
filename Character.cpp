@@ -101,34 +101,29 @@ void Character::attackInternal(Character& other)
         //assert(false);
         std::cout << getName() << " defeated " << other.getName() << " and leveled up!" << std::endl;
 
-        initialHitPoints.reset();
-        initialArmorLevel.reset();
-        initialAttackDamage.reset();
+        hitPoints = *initialHitPoints;
+        armor = *initialArmorLevel;
+        attackDamage = *initialAttackDamage;
         
         boostHitPoints(getHP()/100 * 10);
         boostArmor(getArmorLevel()/100 * 10);
-        boostAttackDamage(getAttackDamage()/100 * 10); 
+        boostAttackDamage(getAttackDamage()/100 * 10);
 
-        int hpReset = getHP();
-        int AReset = getArmorLevel();
-        int ADReset = getAttackDamage();
-
-        initialHitPoints.reset(&hpReset);
-        initialArmorLevel.reset(&AReset);
-        initialAttackDamage.reset(&ADReset);
-     
+        *initialHitPoints = getHP();
+        *initialArmorLevel = getArmorLevel();
+        *initialAttackDamage = getAttackDamage(); 
     }
 }
 
-void Character::printStats()
-{
-    std::cout << getName() << "'s stats: " << std::endl;
-    //assert(false);
-    /*
-    make your getStats() use a function from the Utility.h
-    */
-    std::cout << getStats(); 
+// void Character::printStats()
+// {
+//     std::cout << getName() << "'s stats: " << std::endl;
+//     //assert(false);
+//     /*
+//     make your getStats() use a function from the Utility.h
+//     */
+//     std::cout << getStats(); 
     
-    std::cout << std::endl;
-    std::cout << std::endl;
-}
+//     std::cout << std::endl;
+//     std::cout << std::endl;
+// }
