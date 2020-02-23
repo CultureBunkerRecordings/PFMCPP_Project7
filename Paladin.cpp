@@ -11,7 +11,7 @@ Paladin::Paladin(const std::string n, int hp, int a): Character(hp, a, 10), name
 
 const std::string& Paladin::getName()
 {
-
+    return name;
 }
 
 std::string Paladin::getStats()

@@ -3,6 +3,13 @@
 #include "HelpfulItem.h"
 #include "DefensiveItem.h"
 #include "Character.h"
+#include <assert.h>
+#include "AttackItem.h"
+
+#include "Paladin.h"
+#include "Dwarf.h"
+#include "Dragon.h"
+#include "DragonSlayer.h"
 
 
 std::vector<std::unique_ptr<Item>> makeHelpfulItems(int num)

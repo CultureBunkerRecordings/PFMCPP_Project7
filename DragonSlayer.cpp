@@ -12,7 +12,7 @@ DragonSlayer::DragonSlayer(const std::string n, int hp, int a): Character(hp, a,
 
 const std::string& DragonSlayer::getName()
 {
-
+    return name;
 }
 
 void DragonSlayer::attack(Character& other)
