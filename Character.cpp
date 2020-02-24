@@ -105,13 +105,13 @@ void Character::attackInternal(Character& other)
         armor = *initialArmorLevel;
         attackDamage = *initialAttackDamage;
         
-        boostHitPoints(getHP()/100 * 10);
-        boostArmor(getArmorLevel()/100 * 10);
-        boostAttackDamage(getAttackDamage()/100 * 10);
+        hitPoints *= 1.1;
+        armor *= 1.1;
+        attackDamage *= 1.1;
 
-        *initialHitPoints = getHP();
-        *initialArmorLevel = getArmorLevel();
-        *initialAttackDamage = getAttackDamage(); 
+        *initialHitPoints = hitPoints;
+        *initialArmorLevel = armor;
+        *initialAttackDamage = attackDamage; 
     }
 }
 
