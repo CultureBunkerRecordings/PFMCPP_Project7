@@ -22,18 +22,19 @@ void DragonSlayer::attack(Character& other)
     if( auto* dragon = dynamic_cast<Dragon*>(&other) )
     {
         
-        attackItem->use(&other);
+        attackItem->use(this);
         attackItem.reset();
 
         //DragonSlayers get a 10x boost when attacking dragons, from their attack item.
         //so they should USE their attack item before attacking the dragon... 
         //
+
+
         while( dragon->getHP() > 0 )
         {
           dragon->takeDamage(attackDamage);
         }
     }
-        
     Character::attack(other);
     
 }
