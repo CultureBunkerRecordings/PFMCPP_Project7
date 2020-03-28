@@ -5,7 +5,7 @@
 
 struct AttackItem : Item
 {
-    AttackItem(): Item("Attack Item", 10){};
+    AttackItem(): Item("Attack Item", 10){}
     void use(Character*) override;
 
 };
