@@ -102,10 +102,21 @@ void Character::attackInternal(Character& other)
         //assert(false);
         std::cout << getName() << " defeated " << other.getName() << " and leveled up!" << std::endl;
 
-        hitPoints = *initialHitPoints;
-        armor = *initialArmorLevel;
-        attackDamage = *initialAttackDamage;
+        if(hitPoints < *initialHitPoints)
+        {
+            hitPoints = *initialHitPoints;
+        }
         
+        if (armor < *initialArmorLevel)
+        {
+            armor = *initialArmorLevel;
+        }
+
+        if (attackDamage < *initialAttackDamage)
+        {
+            attackDamage = *initialAttackDamage;
+        }  
+          
         hitPoints *= 1.1;
         armor *= 1.1;
         attackDamage *= 1.1;
