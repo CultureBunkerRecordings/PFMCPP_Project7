@@ -101,7 +101,7 @@ void Character::attackInternal(Character& other)
       */
         //assert(false);
         std::cout << getName() << " defeated " << other.getName() << " and leveled up!" << std::endl;
-
+ 
         if(hitPoints < *initialHitPoints)
         {
             hitPoints = *initialHitPoints;
