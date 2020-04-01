@@ -62,13 +62,14 @@ struct Character
         std::cout << std::endl;
     }
 
-    int ifLessThan(int points, int initPoints)
+    void statChange(int& points, int& initPoints)
     {
         if(points < initPoints)
         {
             points = initPoints;
         }
-        return points;
+        points *= 1.1;
+        initPoints = points;
     }
     
 protected:
